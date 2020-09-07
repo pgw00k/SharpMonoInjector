@@ -41,6 +41,7 @@ namespace SharpMonoInjector.WF
             Properties.Settings.Default.DLLPath = txtInjectorPath.Text;
             Properties.Settings.Default.ClassName = txtClassName.Text;
             Properties.Settings.Default.Method = txtMFName.Text;
+            Properties.Settings.Default.Save();
 
             string strProcessName = txtProcessName.Text;
             string strDllPath = txtInjectorPath.Text;
