@@ -58,7 +58,10 @@ namespace SharpMonoInjector
             byte[] bytes = new byte[size];
 
             if (!Native.ReadProcessMemory(_handle, address, bytes, size))
-                throw new InjectorException("Failed to read process memory", new Win32Exception(Marshal.GetLastWin32Error()));
+            {
+                //throw new InjectorException("Failed to read process memory", new Win32Exception(Marshal.GetLastWin32Error()));
+                Console.WriteLine("Error read process memory on 0x"+address.ToString("X"));
+            }
 
             return bytes;
         }
