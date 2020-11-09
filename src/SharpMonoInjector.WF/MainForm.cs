@@ -25,6 +25,13 @@ namespace SharpMonoInjector.WF
             txtInjectorPath.Text = Properties.Settings.Default.DLLPath;
             txtClassName.Text = Properties.Settings.Default.ClassName;
             txtMFName.Text = Properties.Settings.Default.Method;
+
+            InjectorManager.SetCallback(OnInjectSuccess);
+        }
+
+        protected void OnInjectSuccess()
+        {
+            lLog.Text = DateTime.Now.ToString("HH:mm:ss") + " Success!";
         }
 
         private void btnLoadDll_Click(object sender, EventArgs e)

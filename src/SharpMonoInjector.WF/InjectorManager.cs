@@ -9,6 +9,36 @@ namespace SharpMonoInjector.WF
 {
     public class InjectorManager
     {
+        protected static Action OnInjectSuccess = null;
+        protected static Action OnInjectFail = null;
+
+        /// <summary>
+        /// 设置回调事件
+        /// </summary>
+        /// <param name="onSuccess"></param>
+        /// <param name="onFail"></param>
+        public static void SetCallback(Action onSuccess = null,Action onFail = null)
+        {
+            OnInjectSuccess = onSuccess;
+            OnInjectFail = onFail;
+        }
+
+        protected static void _InjectSuccess()
+        {
+            if(OnInjectSuccess != null)
+            {
+                OnInjectSuccess.Invoke();
+            }
+        }
+
+        protected static void _InjectFail()
+        {
+            if (OnInjectFail != null)
+            {
+                OnInjectFail.Invoke();
+            }
+        }
+
         public static void Log(string info,int type = 0)
         {
             Console.WriteLine(info);
@@ -108,6 +138,7 @@ namespace SharpMonoInjector.WF
                 {
                     IntPtr asm = injector.Inject(file, spName, className, methodName);
                     Log("Injection successful");
+                    _InjectSuccess();
                 }
                 catch (InjectorException ie)
                 {

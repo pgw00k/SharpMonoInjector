@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelInjector = new System.Windows.Forms.Panel();
+            this.lbMFName = new System.Windows.Forms.Label();
+            this.txtMFName = new System.Windows.Forms.TextBox();
             this.btnInjectStart = new System.Windows.Forms.Button();
             this.lbClassName = new System.Windows.Forms.Label();
             this.txtClassName = new System.Windows.Forms.TextBox();
@@ -36,13 +38,13 @@
             this.txtInjectorPath = new System.Windows.Forms.TextBox();
             this.lbProcessName = new System.Windows.Forms.Label();
             this.txtProcessName = new System.Windows.Forms.TextBox();
-            this.lbMFName = new System.Windows.Forms.Label();
-            this.txtMFName = new System.Windows.Forms.TextBox();
+            this.lLog = new System.Windows.Forms.Label();
             this.panelInjector.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelInjector
             // 
+            this.panelInjector.Controls.Add(this.lLog);
             this.panelInjector.Controls.Add(this.lbMFName);
             this.panelInjector.Controls.Add(this.txtMFName);
             this.panelInjector.Controls.Add(this.btnInjectStart);
@@ -57,6 +59,22 @@
             this.panelInjector.Name = "panelInjector";
             this.panelInjector.Size = new System.Drawing.Size(270, 350);
             this.panelInjector.TabIndex = 0;
+            // 
+            // lbMFName
+            // 
+            this.lbMFName.AutoSize = true;
+            this.lbMFName.Location = new System.Drawing.Point(7, 145);
+            this.lbMFName.Name = "lbMFName";
+            this.lbMFName.Size = new System.Drawing.Size(71, 12);
+            this.lbMFName.TabIndex = 10;
+            this.lbMFName.Text = "Method Name";
+            // 
+            // txtMFName
+            // 
+            this.txtMFName.Location = new System.Drawing.Point(88, 142);
+            this.txtMFName.Name = "txtMFName";
+            this.txtMFName.Size = new System.Drawing.Size(179, 21);
+            this.txtMFName.TabIndex = 9;
             // 
             // btnInjectStart
             // 
@@ -117,21 +135,14 @@
             this.txtProcessName.Size = new System.Drawing.Size(179, 21);
             this.txtProcessName.TabIndex = 0;
             // 
-            // lbMFName
+            // lLog
             // 
-            this.lbMFName.AutoSize = true;
-            this.lbMFName.Location = new System.Drawing.Point(7, 145);
-            this.lbMFName.Name = "lbMFName";
-            this.lbMFName.Size = new System.Drawing.Size(71, 12);
-            this.lbMFName.TabIndex = 10;
-            this.lbMFName.Text = "Method Name";
-            // 
-            // txtMFName
-            // 
-            this.txtMFName.Location = new System.Drawing.Point(88, 142);
-            this.txtMFName.Name = "txtMFName";
-            this.txtMFName.Size = new System.Drawing.Size(179, 21);
-            this.txtMFName.TabIndex = 9;
+            this.lLog.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lLog.Location = new System.Drawing.Point(49, 236);
+            this.lLog.Name = "lLog";
+            this.lLog.Size = new System.Drawing.Size(177, 12);
+            this.lLog.TabIndex = 11;
+            this.lLog.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -161,6 +172,7 @@
         private System.Windows.Forms.Button btnInjectStart;
         private System.Windows.Forms.Label lbMFName;
         private System.Windows.Forms.TextBox txtMFName;
+        private System.Windows.Forms.Label lLog;
     }
 }
 
